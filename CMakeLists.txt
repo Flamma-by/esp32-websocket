@@ -1,4 +1,22 @@
-set(COMPONENT_SRCS 	"websocket.c" "websocket_server.c")
-set(COMPONENT_ADD_INCLUDEDIRS "./include")
-set(COMPONENT_REQUIRES lwip mbedtls)
-register_component()
+set(
+    SRCS 	
+    "websocket.c" 
+    "websocket_server.c"
+    )
+set(
+    INCLUDE_DIRS 
+    "./include"
+    )
+set(
+    REQUIRES
+    lwip 
+    mbedtls
+    )
+idf_component_register(
+    SRCS
+        ${SRCS}
+    INCLUDE_DIRS
+        ${INCLUDE_DIRS}
+    REQUIRES
+        ${REQUIRES}
+)
